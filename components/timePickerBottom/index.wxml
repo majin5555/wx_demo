@@ -1,0 +1,5 @@
+<picker mode="multiSelector" range="{{rangeList}}" value="{{rangeValue}}" bindchange="selectChangeFn"
+  bindcolumnchange="selectColumnChangeFn">
+  <text wx:if="{{dateTime}}">{{dateTime}}</text>
+  <text wx:else class="placeholder">{{placeholder}}</text>
+</picker>

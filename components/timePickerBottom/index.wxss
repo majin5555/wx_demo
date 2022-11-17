@@ -1,0 +1,4 @@
+/* components/DatetimePicker/index.wxss */
+.placeholder{
+  color: #999;
+}

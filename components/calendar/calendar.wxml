@@ -1,0 +1,43 @@
+<view class="calendar-panel">
+
+    <view class="date-befor" data-id="0" data-type="month" bindtap='dataBefor'>
+        <view class='left-color' />
+    </view>
+    <view class="calendar-panel-box">
+        <view>{{canlender.year}}年</view>
+        <view>{{canlender.month}}月</view>
+    </view>
+    <view class="date-after" data-id="1" data-type="month" bindtap='dataBefor'>
+        <view class='right-color' />
+    </view>
+
+</view>
+<view class="calendar-header">
+    <view>日</view>
+    <view>一</view>
+    <view>二</view>
+    <view>三</view>
+    <view>四</view>
+    <view>五</view>
+    <view>六</view>
+</view>
+<view class="calendar-body">
+    <block wx:for="{{canlender.weeks}}" wx:for-item="weeks" wx:for-index="week" wx:key="weeks">
+        <view class="calender-body-date-week">
+            <block wx:for="{{weeks}}" wx:for-item="day" wx:key="day">
+                <!-- 单选、多选 -->
+                <view wx:if="{{!isSection}}" class="date {{day.checked && canlender.month == day.month?'date-current': ''}}" data-week="{{week}}" data-index="{{index}}" bindtap='selectDay'>
+                    {{day.date}}
+                </view>
+                <!-- 区间 -->
+                <view wx:else style="color: #1c1c1c;" class="date {{day.checked && canlender.month == day.month?'date-current': ''}} {{ day.range === true ? 'date-currentzhongjian': ''}}" data-week="{{week}}" data-index="{{index}}" bindtap='selectDay'>
+                    <view class="item-days">
+                        {{day.date}}
+                        <text wx:if="{{ canlender.year==startDate[0] && day.month==startDate[1] && day.date==startDate[2] }}" class="start-end">开始</text>
+                        <text wx:if="{{ canlender.year==endDate[0] && day.month==endDate[1] && day.date==endDate[2] }}" class="start-end">结束</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+</view>

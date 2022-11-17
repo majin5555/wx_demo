@@ -1,0 +1,18 @@
+<!-- //年月日时分秒 -->
+<view>
+  <view style="color: red;">第一种：年月日时分秒</view>
+  <time-picker mode="datetime" valueFormat="YYYY-MM-DD HH:MM:SS" value="{{datetime}}" placeholder="{{placeholder}}" bindChange="selectDateTime"/>
+</view>
+<!-- //年月日时分 -->
+<view>
+  <view style="color: red;">第二种：年月日</view>
+  <time-picker mode="date" valueFormat="YYYY-MM-DD" value="{{date}}" placeholder="{{placeholder}}" bindChange="selectDate"/>
+</view>
+
+<view>
+  <view style="color: red;">第三种：时分秒</view>
+  <time-picker mode="time" valueFormat="HH:MM:SS" value="{{time}}" placeholder="{{placeholder}}" bindChange="selectTime"/>
+</view>
+
+<!-- mode -->
+<!--  date  time datetime-->

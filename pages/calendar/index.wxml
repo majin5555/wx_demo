@@ -1,0 +1,6 @@
+<!--index.wxml-->
+
+<calendar id="calendar" selected="{{selectedDays}}"   bind:select="cmfclick" bind:getdate="getdate"   bind:clear="clear"
+multiple="section"
+/>
+<!-- single Multiple  section -->
